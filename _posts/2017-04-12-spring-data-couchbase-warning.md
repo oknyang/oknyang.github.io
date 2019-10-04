@@ -1,7 +1,7 @@
 ---
 title: Couchbase.. More than 1 Couchbase Environments found 경고
 date: 2017-04-12
-categories: spring-data-couchbase 삽질
+categories: spring-data-couchbase warning
 ---
 
 아래와 같이 하나의 클러스터에 environments를 설정하지 않고 여러개의 버켓을 사용하면 서버가 뜨긴 뜨나 경고가 발생한다.
