@@ -4,6 +4,8 @@ date: 2017-09-07
 categories: mockito verify 삽질
 ---
 
+verify 삽질 기록. 
+
 ```java
 @RunWith(MockitoJUnitRunner.class)
 public class BuyCheckServiceTest {
