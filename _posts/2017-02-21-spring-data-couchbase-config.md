@@ -27,9 +27,6 @@ import org.springframework.data.couchbase.repository.config.RepositoryOperations
 import java.util.Arrays;
 import java.util.List;
 
-/**
- * @author tmon
- */
 @Configuration
 @EnableCouchbaseRepositories(basePackages = "com.tmoncorp.batch.order.couchbase.repository", repositoryBaseClass = CustomRepositoryImpl.class)
 @PropertySource("classpath:applicationProperty.properties")
