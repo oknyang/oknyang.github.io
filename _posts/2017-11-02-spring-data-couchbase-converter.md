@@ -1,7 +1,7 @@
 ---
 title: spring-data-couchbase CustomConverter
 date: 2017-11-02
-categories: spring-data-couchbase 삽질
+categories: spring-data-couchbase
 ---
 
 spring.io에서는 AbstractCouchbaseDataConfiguration 클래스를 상속받아서 아래 메소드를 오버라이드 하라고 가이드가 나와있으나 AbstractCouchbaseDataConfiguration 클래스를 상속받아 설정하는 방법이 아닌 javaConfig 클래스를 하나 두고 모든 빈을 관리하는 방식을 사용중이라 이 방법을 적용할 수 없다.
