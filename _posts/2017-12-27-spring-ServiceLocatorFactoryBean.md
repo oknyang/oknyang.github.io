@@ -4,7 +4,7 @@ date: 2017-12-27
 categories: spring
 ---
 
-1. applicationContext xml 설정
+applicationContext xml 설정.   
 ```
 <bean id="converterFactoryBean" class="org.springframework.beans.factory.config.ServiceLocatorFactoryBean">
    <property name="serviceLocatorInterface" value="com.tmoncorp.template.converter.ConverterFactory"/>
@@ -14,7 +14,7 @@ categories: spring
 serviceLocatorInterface 는 bean을 가져오는 method를 정의한 interface. bean을 주입받을때에도 serviceLocatorInterface에 set한 ConverterFactory로 주입받는다.  
 ServiceLocatorFactoryBean 의  ServiceLocatorInvocationHandler.invokeServiceLocatorMethod 를 보면 serviceLocatorInterface 에 정의한 method의 첫번째 argument 값을 beanName으로 지정해 bean을 가져오는 부분을 확인할 수 있다.  
 
-ConverterFactory에서는 vendorId 값으로 Converter type의 bean을 가져옴.
+ConverterFactory에서는 vendorId 값으로 Converter type의 bean을 가져옴.  
 ```
 public interface ConverterFactory {
    Converter getConverter(String vendorId);
