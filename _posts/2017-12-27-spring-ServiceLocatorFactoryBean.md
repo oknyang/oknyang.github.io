@@ -86,7 +86,8 @@ public class Sample2Converter implements Converter {
 factory bean의 주입과 사용.  
 serviceLocatorInterface로 지정한 ConverterFactory를 주입받았으며,  
 bean을 얻기 위해 converterFactory.getConverter를 콜한다.  
-여기에서는 vendorId를 argument로 넘겨주게 되고, 결국 vendorId 와 동일한 name을 가진 bean을 return 받게 된다.   converterFactory.getConverter(“test”) -> Sample2Converter return
+여기에서는 vendorId를 argument로 넘겨주게 되고, 결국 vendorId 와 동일한 name을 가진 bean을 return 받게 된다.  
+converterFactory.getConverter(“test”) -> Sample2Converter return
 
 ```java
 @Component
