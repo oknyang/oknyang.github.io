@@ -1,6 +1,7 @@
 ---
 layout: home
-limit: 10
+limit: 100
 show_excerpts: true
 entries_layout: list
 ---
+
