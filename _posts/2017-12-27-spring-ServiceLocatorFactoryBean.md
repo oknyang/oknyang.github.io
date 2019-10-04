@@ -6,7 +6,7 @@ categories: spring
 
 applicationContext xml 설정.   
 
-```
+```xml
 <bean id="converterFactoryBean" class="org.springframework.beans.factory.config.ServiceLocatorFactoryBean">
    <property name="serviceLocatorInterface" value="com.tmoncorp.template.converter.ConverterFactory"/>
 </bean>
@@ -18,7 +18,7 @@ ServiceLocatorFactoryBean 의 ServiceLocatorInvocationHandler.invokeServiceLocat
 
 ConverterFactory에서는 vendorId 값으로 Converter type의 bean을 가져옴.  
 
-```
+```java
 public interface ConverterFactory {
    Converter getConverter(String vendorId);
 }
@@ -26,7 +26,7 @@ public interface ConverterFactory {
 
 ConverterFactory에서 return 할 Converter type의 bean 생성 - sample이라는 이름의 bean, test라는 이름의 bean을 생성함.  
 
-```
+```java
 public interface Converter<T, S> {
    T convertToExternalRequestParam(InternalRequestParam internalRequestParam);
 
@@ -35,7 +35,7 @@ public interface Converter<T, S> {
    S callVendorOrder(T externalRequestParam);
 }
 ```
-```
+```java
 @Component("sample")
 public class SampleConverter implements Converter {
 
@@ -59,7 +59,7 @@ public class SampleConverter implements Converter {
    }
 }
 ```
-```
+```java
 @Component("test")
 public class Sample2Converter implements Converter {
 
@@ -88,7 +88,7 @@ serviceLocatorInterface로 지정한 ConverterFactory를 주입받았으며,
 bean을 얻기 위해 converterFactory.getConverter를 콜한다.  
 여기에서는 vendorId를 argument로 넘겨주게 되고, 결국 vendorId 와 동일한 name을 가진 bean을 return 받게 된다.   converterFactory.getConverter(“test”) -> Sample2Converter return
 
-```
+```java
 @Component
 public class OrderSendService {
    @Autowired
