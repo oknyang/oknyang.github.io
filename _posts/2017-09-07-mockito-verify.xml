@@ -33,12 +33,14 @@ public class BuyCheckServiceTest {
       verify(accountService, never()).decreaseCashAmount(anyObject(), anyObject());
    }
 }
+
 ```
 
 위 테스트에서 자꾸 아래와 같은 에러메시지와 함께 테스트 실패가 남.  
 이게 뭔 멍멍이 소리여… final 도 , private 도, equals 도, hashCode 도 아닌데…. 한참 ㅅㅂㅅㅂ거리면서 구글링함...
 
 ```
+
 Disconnected from the target VM, address: '127.0.0.1:49812', transport: 'socket'
 
 Process finished with exit code 255
@@ -76,6 +78,7 @@ Those methods *cannot* be stubbed/verified.
     at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:42)
     at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:234)
     at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:74)
+
 ```
 
 겨우겨우 https://stackoverflow.com/questions/15904584/mockito-gives-unfinishedverificationexception-when-it-seems-ok 요런 글을 찾았다.  
@@ -83,10 +86,12 @@ Those methods *cannot* be stubbed/verified.
 아래에 답변 달린걸 보니 테스트 끝나고 validateMockitoUsage() 라는걸 콜하란다.. 그럼 에러메시지가 좀 자세히 보일꺼라는...
 
 ```java
+
 @After
 public void validate() {
    validateMockitoUsage();
 }
+
 ```
 
 저걸 붙이고 테스트를 돌려봤더니 아래와 같이 에러메시지가 달라짐.. 아규먼트 매쳐 사용이 잘못되었다는!!!!  
@@ -94,6 +99,7 @@ public void validate() {
 내가 쓴 아규먼트 매쳐는 anyObject() 였다.. anyLong() 으로 바꾸고 나니 테스트가 통과하더라...
 
 ```
+
 Process finished with exit code 255
 
 org.mockito.exceptions.misusing.InvalidUseOfMatchersException: 
