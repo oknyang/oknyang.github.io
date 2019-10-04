@@ -1,5 +1,5 @@
 ---
-title: "spring ServiceLocatorFactoryBean 사용"
+title: "ServiceLocatorFactoryBean"
 date: 2017-12-27
 categories: spring
 ---
