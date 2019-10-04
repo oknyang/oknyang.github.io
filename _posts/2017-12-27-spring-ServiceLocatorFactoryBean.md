@@ -5,16 +5,19 @@ categories: spring
 ---
 
 applicationContext xml 설정.   
+
 ```
 <bean id="converterFactoryBean" class="org.springframework.beans.factory.config.ServiceLocatorFactoryBean">
    <property name="serviceLocatorInterface" value="com.tmoncorp.template.converter.ConverterFactory"/>
 </bean>
 ```
 
-serviceLocatorInterface 는 bean을 가져오는 method를 정의한 interface. bean을 주입받을때에도 serviceLocatorInterface에 set한 ConverterFactory로 주입받는다.  
-ServiceLocatorFactoryBean 의  ServiceLocatorInvocationHandler.invokeServiceLocatorMethod 를 보면 serviceLocatorInterface 에 정의한 method의 첫번째 argument 값을 beanName으로 지정해 bean을 가져오는 부분을 확인할 수 있다.  
+serviceLocatorInterface 는 bean을 가져오는 method를 정의한 interface.  
+bean을 주입받을때에도 serviceLocatorInterface에 set한 ConverterFactory로 주입받는다.  
+ServiceLocatorFactoryBean 의 ServiceLocatorInvocationHandler.invokeServiceLocatorMethod 를 보면 serviceLocatorInterface 에 정의한 method의 첫번째 argument 값을 beanName으로 지정해 bean을 가져오는 부분을 확인할 수 있다.  
 
 ConverterFactory에서는 vendorId 값으로 Converter type의 bean을 가져옴.  
+
 ```
 public interface ConverterFactory {
    Converter getConverter(String vendorId);
@@ -81,7 +84,8 @@ public class Sample2Converter implements Converter {
 }
 ```
 factory bean의 주입과 사용.  
-serviceLocatorInterface로 지정한 ConverterFactory를 주입받았으며, bean을 얻기 위해 converterFactory.getConverter를 콜한다.  
+serviceLocatorInterface로 지정한 ConverterFactory를 주입받았으며,  
+bean을 얻기 위해 converterFactory.getConverter를 콜한다.  
 여기에서는 vendorId를 argument로 넘겨주게 되고, 결국 vendorId 와 동일한 name을 가진 bean을 return 받게 된다.   converterFactory.getConverter(“test”) -> Sample2Converter return
 
 ```
