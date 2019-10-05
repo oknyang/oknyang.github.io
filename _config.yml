@@ -15,7 +15,7 @@ remote_theme             : "mmistakes/minimal-mistakes"
 minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
-locale                   : "en-US"
+locale                   : "euc-KR"
 title                    : "삽질 기록기"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
@@ -109,7 +109,7 @@ analytics:
 author:
   name             : "oknyang"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I am an **amazing** person."
+  bio              : ""
   location         : "Somewhere"
   email            :
   links:
@@ -130,7 +130,7 @@ author:
       # url: "https://github.com/"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
-      # url: "https://instagram.com/"
+      # url: ""
 
 # Site Footer
 footer:
