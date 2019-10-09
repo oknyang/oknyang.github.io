@@ -13,7 +13,7 @@ lock은 cache 버킷의 document를 이용하는걸로.. (document id로 insert 
 cache 버킷은 n1ql을 지원하지 않음. view도 안됐던거같은데….? 당연히 인덱싱도 안됨.  
 https://developer.couchbase.com/documentation/server/4.6/architecture/core-data-access-buckets.html 참고  
 
-**chache 버킷 사용 이유 :**  
+**cache 버킷 사용 이유 :**  
 이 기능은 어디까지나 흔히들 말하는 횡단 관심사와 유사하기 때문에, 이 기능 하나로 인해 실제 api 실행에 크게 영향이 있어서는 안된다.  
 이때문에 insert / remove 등의 동작이 빠를 수록 유리하고, 데이터를 반드시 유지시켜야 할 필요성이 적다.
 
