@@ -54,7 +54,7 @@ public class ExternalTicketService {
 ```
 
 아래와 같이 aspect를 만듬.  
-use(String, String) method는 성공시 리턴값이 따로 없고,  
+단건 처리 용인 use(String, String) method는 성공시 리턴값이 따로 없고,  
 실패하면 무조건 exception을 던지도록 되어있기 때문에 `@AfterThrowing` 어노테이션을 이용해 익셉션이 났으면 실패로 간주하고 데이터를 쌓도록 구성함.
 
 
