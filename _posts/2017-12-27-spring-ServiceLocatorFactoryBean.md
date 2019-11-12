@@ -8,7 +8,7 @@ applicationContext xml 설정.
 
 ```xml
 <bean id="converterFactoryBean" class="org.springframework.beans.factory.config.ServiceLocatorFactoryBean">
-   <property name="serviceLocatorInterface" value="com.tmoncorp.template.converter.ConverterFactory"/>
+   <property name="serviceLocatorInterface" value="com.oknyang.template.converter.ConverterFactory"/>
 </bean>
 ```
 
