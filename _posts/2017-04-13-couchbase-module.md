@@ -24,7 +24,9 @@ bucket bean 등록.
 public class CouchbaseConfig {
    private static Logger LOGGER = LoggerFactory.getLogger(CouchbaseConfig.class);
 
-   @Bean   @Lazy   public Bucket orderBucket(@Value("${couchbase.nodes}") String nodes, @Value("${couchbase.bucketname}") String bucketName, @Value("${couchbase.password}") String bucketPassword) {
+   @Bean
+   @Lazy
+   public Bucket orderBucket(@Value("${couchbase.nodes}") String nodes, @Value("${couchbase.bucketname}") String bucketName, @Value("${couchbase.password}") String bucketPassword) {
       LOGGER.info("couchbase order bucket creation.. nodes : {}, bucket : {}", nodes, bucketName);
 
       String[] nodeArray = StringUtils.split(nodes, ",");
@@ -51,7 +53,7 @@ public class OrderCouchbaseRepository {
    private static final Logger LOGGER = LoggerFactory.getLogger(OrderCouchbaseRepository.class);
 
    @Autowired
-   private TmonObjectMapper mapper;
+   private TmObjectMapper mapper;
 
    @Autowired
    private Bucket orderBucket;
@@ -133,14 +135,14 @@ select *
 [
   {
     "order": {
-      "_class": "com.tmoncorp.api.order.biz.order.model.Order",
+      "_class": "com.oknyang.api.order.biz.order.model.Order",
       "_type": "ORDER",
       "createDt": 1491198630535,
       "customDetailList": [],
       "fuelSurchargeList": [
         {
           "accountCouponSrl": 2559204947,
-          "accountSrl": 54162130,
+          "accountSrl": 1234567,
           "approveDt": 1491198454000,
           "buySrl": 121232786943,
           "cartCouponAmt": 57280,
@@ -150,13 +152,13 @@ select order.*
 ```
 [
   {
-    "_class": "com.tmoncorp.api.order.biz.order.model.Order",
+    "_class": "com.oknyang.api.order.biz.order.model.Order",
     "_type": “ORDER",
     "createDt": 1491879122709,
     "customDetailList": [],
     "fuelSurchargeList": [
       {
-        "accountSrl": 54162130,
+        "accountSrl": 1234567,
         "approveDt": 1491197157000,
         "buySrl": 121232786175,
         "cartCouponAmt": 0,
@@ -166,7 +168,9 @@ select order.*
 OrderCouchbaseService : 역시 lazy loading.. 모듈을 사용하는 api에서 이 orderCouchbaseService 빈을 이용하도록 만듬..
 
 ```java
-@Component@Lazypublic class OrderCouchbaseService {
+@Component
+@Lazypublic
+class OrderCouchbaseService {
    @Autowired OrderCouchbaseRepository orderCouchbaseRepository;
 
    public List<Order> findOrdersWithFuelSurchargeStatusType(String statusType, Date startDt, Date endDt) throws IOException {
