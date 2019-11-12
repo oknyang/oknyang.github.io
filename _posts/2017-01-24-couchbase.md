@@ -17,4 +17,4 @@ cas가 기존 document와 일치하지 않으면 replace 하다가 CASMismatchEx
 
 ##### Update 로직 변경
 - 1.3.0 : 기존 문서 없이 바로 update 가능. (upsert 와 동일하게 동작)
-- 2.1.6 : 기존 문서 없이 update 불가. cas 체크 안함. id만 같으면 업데이트 됨.
+- 2.1.6 : 기존 문서 없이 update 불가. cas 체크 안함. id만 같으면 업데이트 됨.  
