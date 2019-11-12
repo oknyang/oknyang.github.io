@@ -9,9 +9,9 @@ multi bucket , base repository class  변경.
 package com.tmoncorp.batch.order.couchbase.config;
 
 import com.couchbase.client.java.Bucket;
-import com.tmoncorp.api.order.biz.cash.model.ReceiptHistory;
-import com.tmoncorp.api.order.biz.order.model.OrderHistory;
-import com.tmoncorp.batch.order.couchbase.repository.CustomRepositoryImpl;
+import com.oknyang.api.order.biz.cash.model.ReceiptHistory;
+import com.oknyang.api.order.biz.order.model.OrderHistory;
+import com.oknyang.batch.order.couchbase.repository.CustomRepositoryImpl;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
