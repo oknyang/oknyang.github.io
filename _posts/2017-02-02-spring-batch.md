@@ -74,11 +74,11 @@ public class DealMessageDeleteJobConfig {
 launch-context.xml
 ```xml
    <context:property-placeholder location="classpath:applicationProperty.properties" />
-   <context:component-scan base-package="com.tmoncorp.batch" />
-   <context:component-scan base-package="com.tmoncorp.core.mail" />
-   <context:component-scan base-package="com.tmoncorp.core.excel" />
-   <context:component-scan base-package="com.tmoncorp.core.api" />
-   <context:component-scan base-package="com.tmoncorp.core.rpc" />
+   <context:component-scan base-package="com.oknyang.batch" />
+   <context:component-scan base-package="com.oknyang.core.mail" />
+   <context:component-scan base-package="com.oknyang.core.excel" />
+   <context:component-scan base-package="com.oknyang.core.api" />
+   <context:component-scan base-package="com.oknyang.core.rpc" />
 <!--   <bean class="org.springframework.batch.core.scope.StepScope" /> -->
    <import resource="classpath:/springbatch/applicationContext-*.xml" />
    <import resource="classpath:/spring/applicationContext-url.xml"/>
@@ -109,12 +109,12 @@ private Collection<DataSource> dataSources;
 요렇게 받고 있었음.. DataSource 타입은 몽땅 주입받는.. 이렇게 주입받아놓고 DefaultBatchConfigurer 생성시 데이터 소스가 하나 이상이면 익셉션 발생되게...
 참고 - required - @Autowired어노테이션을 적용한 프로퍼티에 대해 굳이 설정할 필요가 없는 경우에 false값을 주며 이때 해당 프로퍼티가 존재하지 않더라도 스프링은 예외를 발생시키지 않는다. 디폴트값은 true
 
-이렇게 되면 DefaultBatchConfigurer 를 사용하면 안된다 싶어서 좀 찾아보니 TmonBatchConfigurer가 있더라.. core에..  
-TmonBatchConfigurer를 대충 살펴보니 dataSource를 생성자로 하나만 주입할수 있게 해놨음. 
+이렇게 되면 DefaultBatchConfigurer 를 사용하면 안된다 싶어서 좀 찾아보니 TmBatchConfigurer 있더라.. core에..  
+TmBatchConfigurer 대충 살펴보니 dataSource를 생성자로 하나만 주입할수 있게 해놨음. 
 
 ```java
 private DataSource dataSource;
-public TmonBatchConfigurer(DataSource dataSource) {
+public TmBatchConfigurer(DataSource dataSource) {
    setDataSource(dataSource);
 }
 ```
@@ -144,7 +144,7 @@ public class DealMessageDeleteJobConfig {
 
    @Bean
    public BatchConfigurer batchConfig() {
-      return new TmonBatchConfigurer(dataSource);
+      return new TmBatchConfigurer(dataSource);
    }
 
    @Bean
