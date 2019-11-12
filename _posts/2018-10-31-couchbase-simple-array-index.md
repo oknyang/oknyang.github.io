@@ -13,6 +13,6 @@ distinct array var for var in items end
 
 simple array index 예제
 ```sql
-CREATE INDEX `SnapshotSimple_tmonOrderNos`  ON `interwork_snapshot` (DISTINCT `tmonOrderNos`)
+CREATE INDEX `SnapshotSimple_orderNos`  ON `interwork_snapshot` (DISTINCT `orderNos`)
 WHERE keyType = 'SNAPSHOT_SIMPLE_REQ'
 ```
