@@ -1,5 +1,5 @@
 ---
-title: "couchbase_info"
+title: "couchbase server"
 date: 2019-11-16 21:50:00
 categories: couchbase
 ---
