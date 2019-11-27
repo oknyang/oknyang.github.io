@@ -1,5 +1,5 @@
 ---
-title: API 중복호출 방지 기능 template method 패턴 적용한 최종본
+title: API 중복호출 방지 기능 template callback 패턴 적용한 최종본
 date: 2018-07-17
 ---
 
