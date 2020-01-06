@@ -121,7 +121,7 @@ OO의 등장으로 언제 어디서든 플러그인 아키텍처를 적용할 �
 #### 의존성 역전
 다형성을 안전하고 편리하게 적용할 수 있는 매커니즘이 등장하기 전 소프트웨어는 제어흐름은 시스템의 행위에 따라 결정되며, 소스 코드 의존성은 제어흐름에 따라 결정되었다.  
 하지만 다형성이 끼어들면 무언가 특별한 일이 일어난다.
-
+![제어의 역전](https://raw.githubusercontent.com/oknyang/oknyang.github.io/master/inversion_of_control.png "제어의 역전")
 
 
 
