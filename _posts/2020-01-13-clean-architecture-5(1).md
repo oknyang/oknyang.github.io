@@ -1,5 +1,5 @@
 ---
-title: "clean architecture 5"
+title: "clean architecture 5(1)"
 date: 2020-01-14
 categories: architecture
 ---
