@@ -35,4 +35,5 @@ categories: architecture
 * UI 독립성. 시스템의 나머지 부분을 변경하지 않고도 UI를 쉽게 변경할 수 있다. 
 * 데이터베이스 독립성. 
 * 모든 외부 에이전시에 대한 독립성. 실제로 업무 규칙은 외부 세계와의 인터페이스에 대해 전혀 알지 못한다. 
+![clean architecture](https://raw.githubusercontent.com/oknyang/oknyang.github.io/master/the-clean-architecture.jpg "clean architecture")
 
