@@ -30,6 +30,6 @@ categories: spring-security
 ```
 
 2. accessToken 발급  
-
+BasicAuthenticationFilter -> ProviderManager -> AbstractUserDetailsAuthenticationProvider -> DaoAuthenticationProvider -> ClientDetailsUserDetailsService -> JdbcClientDetailsService -> TokenEndpoint
 
 
