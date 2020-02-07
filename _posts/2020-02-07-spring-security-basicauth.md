@@ -13,7 +13,7 @@ categories: spring-security
         <security:intercept-url pattern="/oauth/token" access="IS_AUTHENTICATED_FULLY"/>
         <security:anonymous enabled="false"/>
         <security:http-basic entry-point-ref="oauthAuthenticationEntryPoint"/>
-        <security:custom-filter ref="clientCredentialsTokenEndpointFilter" before="BASIC_AUTH_FILTER"/> <!-- 디버깅해보니 이거 안탐.. 추가 : request param으로 넘길경우에 요 필터를 타게 되어있음. -->
+        <security:custom-filter ref="clientCredentialsTokenEndpointFilter" before="BASIC_AUTH_FILTER"/> <!-- 디버깅해보니 이거 안탐.. 추가 : header가 아닌 request param으로 id, secret 넘길경우에 요 필터를 타게 되어있음. -->
         <security:access-denied-handler ref="oauthAccessDeniedHandler"/>
     </security:http>
     
