@@ -18,7 +18,7 @@ categories: spring-security
     </security:http>
     
     <security:http create-session="never" authentication-manager-ref="authenticationManager" use-expressions="true">
-        <security:intercept-url pattern="/api/**" access="#oauth2.hasScope('vd') and @interworkOAuth2Validator.validate(authentication, request)"/>
+        <security:intercept-url pattern="/api/**" access="#oauth2.hasScope('vd') and @customOAuth2Validator.validate(authentication, request)"/>
         <security:intercept-url pattern="/error/**" access="permitAll"/>
         <security:intercept-url pattern="/**" access="denyAll"/>
         <security:anonymous enabled="false"/>
