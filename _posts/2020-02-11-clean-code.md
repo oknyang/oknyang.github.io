@@ -696,7 +696,7 @@ XML은 장황하고 읽기 어렵다는 문제가 있음에도 불구하고, 이
 * 일부 클래스 라이브러리는 스레드에 안전하지 못하다.
 
 #### 스레드 환경에 안전한 컬렉션
-java.util.concurrent 패키지 참고.
+java.util.concurrent 패키지 참고.  
 lock 종류  
 * ReenterantLock : 한 메서드에서 잠그고 다른 메서드에서 푸는 락
 * Semaphore : 전형적인 세마포어. 개수가 있는 락
