@@ -21,4 +21,9 @@ infra에서 2, 3번 노드 failover 시도.
 cache 버킷 사용하는 기능은 '중복실행방지' 뿐인데, 이 기능은 실제 시스템 기능엔 크게 영향을 끼치지 않는 부분임.  
 이에, 쉽게 해결될 상황이 아닌듯 하여 일단 '중복실행방지' 기능의 ignoreException 부분을 모두 true로 바꿔 해당 기능에서 오류가 발생하더라도 계속 작업을 수행하도로 수정 배포함.  
 
+### cache 버킷 장애 대응 계획
+반드시 couchbase cache 버킷을 사용해야할 필요는 없음.  
+이에 cache 버킷 장애시 memcached 기반으로 실행 가능하도록 memcached 이용한 기능 개발 예정.  
+또한, module에 있던 aspect 관련 코드를 코어 로직은 module로, aspect는 external로 옮겨 장애 발생시 좀 더 빠른 배포가 가능하도록 개선 예정.
+
 
