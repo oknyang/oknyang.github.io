@@ -13,3 +13,5 @@ rollback을 위해 사용하는 TransactionConfiguration 어노테이션 depreca
 @Rollback may now be used to configure class-level default rollback semantics.
 Consequently, @TransactionConfiguration is now deprecated and will be removed in a subsequent release.
 ```
+### 2. java.lang.NoSuchMethodError: ch.qos.logback.core.util.ContextUtil.addHostNameAsProperty()
+logback 버전 1.1.7 -> 1.2.3  
