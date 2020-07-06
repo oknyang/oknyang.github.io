@@ -41,3 +41,16 @@ spring:
   main:
     allow-bean-definition-overriding: true
 ```
+
+### 4. rabbitmq 호환성 오류?
+#### 오류
+```
+[2020-07-06 16:00:05] [RMI TCP Connection(2)-127.0.0.1] [ERROR] o.s.b.SpringApplication.reportFailure[826] Application run failed
+java.lang.IllegalStateException: Error processing condition on org.springframework.boot.autoconfigure.amqp.RabbitAnnotationDrivenConfiguration.directRabbitListenerContainerFactoryConfigurer
+	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:60)
+	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:108)
+```
+#### 원인
+
+#### 해결책
+
