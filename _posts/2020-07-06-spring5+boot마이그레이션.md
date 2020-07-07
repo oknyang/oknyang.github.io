@@ -129,3 +129,20 @@ order_api pom 파일에 아래와 같이 spring-data-redis 오버라이드하고
 ```
 
 ### 6. jackson
+#### 오류
+InvalidDefinitionException 클래스를 찾지 못함.
+```
+[2020-07-07 15:38:23] [RMI TCP Connection(2)-127.0.0.1] [ERROR] o.s.b.SpringApplication.reportFailure[826] Application run failed
+java.lang.NoClassDefFoundError: com/fasterxml/jackson/databind/exc/InvalidDefinitionException
+	at java.lang.Class.getDeclaredConstructors0(Native Method)
+	at java.lang.Class.privateGetDeclaredConstructors(Class.java:2671)
+	at java.lang.Class.getDeclaredConstructors(Class.java:2020)
+
+```
+#### 해결책
+jackson 버전 2.6.7에서 2.10.3으로 변경
+```xml
+	<properties>
+		<jackson2.version>2.10.3</jackson2.version>
+	</properties>
+```
