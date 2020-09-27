@@ -16,3 +16,6 @@ start() 메소드는 thread를 runnable 상태로 변환하며, jvm에서 thread
 ### join()
 다른 thread의 종료를 기다림.  
 ex) main thread가 다른 작업 thread보다 일찍 끝나는 경우 작업 thread의 수행 완료를 기다리기 위해 사용.
+
+### isAlive()
+thread가 살아있는지 체크.
