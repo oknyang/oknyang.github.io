@@ -31,3 +31,4 @@ notifyAll() 호출시 모든 대기 스레드에 알림이 가지만, 어차피 
 대기중인 모든 스레드가 상호 교환이 가능한 경우(아마 병행 처리(cuncurrency)일 경우를 말하는 듯)에는 notify()를 사용해야 한다. (ex - thread pool)  
 상호배타적인 잠금의 경우 notify()를 사용하는것이 좋다. 제대로 구현했다면 notifyAll()을 사용해도 되지만, 어쨌든 아무것도 할 수 없는 스레드를 불필요하게 깨우게 된다.  
 전처리가 완료되면 대기중인 모든 스레드가 작업을 진행할 수 있는 경우에는 notifyAll()을 사용한다.  
+참고 url : https://www.geeksforgeeks.org/difference-notify-notifyall-java/
