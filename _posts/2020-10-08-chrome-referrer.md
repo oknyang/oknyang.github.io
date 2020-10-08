@@ -42,3 +42,6 @@ safari, mozilla 등 브라우저 기본 정책. (chrome 85 이하 버전에서�
 
 #### unsafe-url
 무조건 full url을 넘긴다.
+
+### chrome default referrre 정책 변경 방법
+chrome://flags/#reduced-referrer-granularity -> disable : stric-origin-when-cross-origin에서 no-referrer-when-downgrade로 변경됨.  
