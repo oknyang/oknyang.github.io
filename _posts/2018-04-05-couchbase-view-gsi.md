@@ -1,7 +1,6 @@
 ---
 title: View (Local Indexes) vs GSI (Global Indexes)
 date: 2018-04-05
-categories: couchbase
 ---
 
 #### 비교
