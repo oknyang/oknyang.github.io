@@ -72,6 +72,13 @@ ENTRYPOINT ["java","-jar","/app.jar"]
 EXPOSE 18081
 ```
 
+### aws credentials 설정되 (jenkins 플러그인 미리 설치 필요)
+jenkins 관리 > security > Manage Credentials  
+![streamcollection](https://raw.githubusercontent.com/oknyang/oknyang.github.io/master/manage-credentials.png "manage credentials")  
+![streamcollection](https://raw.githubusercontent.com/oknyang/oknyang.github.io/master/credentials-list.png "credentials-list")  
+![streamcollection](https://raw.githubusercontent.com/oknyang/oknyang.github.io/master/credentials-detail.png "credentials-detail")  
+
+
 ### jenkins job 생성 및 설정
 jenkins > 새로운 Item > Pipeline 선택  
 ![streamcollection](https://raw.githubusercontent.com/oknyang/oknyang.github.io/master/jenkins-create-job.png "create job")
