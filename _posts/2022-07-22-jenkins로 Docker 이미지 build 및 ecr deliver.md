@@ -55,7 +55,7 @@ node {
          sh 'rm  ~/.dockercfg || true'
          sh 'rm ~/.docker/config.json || true'
 
-         docker.withRegistry('https://364650154543.dkr.ecr.ap-northeast-2.amazonaws.com/member-api', 'ecr:ap-northeast-2:364650154543') {
+         docker.withRegistry('https://364650154543.dkr.ecr.ap-northeast-2.amazonaws.com/member-api', 'ecr:ap-northeast-2:dev-pub1') {
              app.push("${env.BUILD_NUMBER}")
              app.push("latest")
      }
