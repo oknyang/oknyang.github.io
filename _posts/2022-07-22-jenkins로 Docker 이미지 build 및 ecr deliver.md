@@ -74,3 +74,7 @@ EXPOSE 18081
 
 ### jenkins job 생성 및 설정
 jenkins > 새로운 Item > Pipeline 선택
+![streamcollection](https://raw.githubusercontent.com/oknyang/oknyang.github.io/master/jenkins-create-job.png "create job")
+
+설정 > 파이프라인
+![streamcollection](https://raw.githubusercontent.com/oknyang/oknyang.github.io/master/jenkins-pipeline-config.png "config")
