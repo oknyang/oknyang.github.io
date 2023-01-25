@@ -4,23 +4,27 @@ date: 2022-07-22
 ---
 
 ## jenkins로 Docker 이미지 build
-### jenkins가 설치된 서버에 Docker 설치
+서비스 CI/CD 초기 구성도는 아래와 같았으며, 내가 담당한 부분은 그림의 윗부분 Deveploper CI/CD Pipeline.  
+![streamcollection](https://raw.githubusercontent.com/oknyang/oknyang.github.io/master/cicd-pipeline.png "cicd pipeline")  
+
+
+#### jenkins가 설치된 서버에 Docker 설치
 ```
 yum -y update
 yum -y install docker
 ```
 
-### docker 설치 후 docker daemon 실행
+#### docker 설치 후 docker daemon 실행
 ```
 sudo systemctl start docker.service
 ```
 
-### jenkins에서 docker를 실행할 수 있도록 docker.sock 권한 수정
+#### jenkins에서 docker를 실행할 수 있도록 docker.sock 권한 수정
 ```
 sudo chmod 666 /var/run/docker.sock
 ```
 
-#### docker.sock
+##### docker.sock
 도커는 크게 서버와 클라이언트로 나뉩니다.  
 실제로 컨테이너를 생성하고 실행하며 이미지를 관리하는 주체는 도커 서버이고, 이는 dockerd 프로세스로서 동작합니다. 
 도커 엔진은 외부에서 API 입력을 받아 도커 엔진의 기능을 수행하는데, 도커 프로세스가 실행되어 서버로서 입력을 받을 준비가 된 상태를 도커 데몬이라고 합니다.  
@@ -29,10 +33,10 @@ sudo chmod 666 /var/run/docker.sock
 이때 도커 클라이언트는 /var/run/docker.sock에 위치한 유닉스 소켓을 통해 도커 데몬의 API를 호출합니다.
 
 ## jenkins pipe line으로 Docker 이미지 build
-### jenkins에서 플러그인 설치
+#### jenkins에서 플러그인 설치
 젠킨스 설정화면의 플러그인 메뉴에서 Pipeline, Docker Pipeline 플러그인을 설치한다.
 
-### 빌드할 리파지토리에 파이프라인 스크립트 및 이미지 빌드를 위한 도커파일 추가
+#### 빌드할 리파지토리에 파이프라인 스크립트 및 이미지 빌드를 위한 도커파일 추가
 아래의 스크립트와 도커파일을 리파지토리(ex - member-api)에 추가한다.
 ```
 // jenkins pipeline script
@@ -72,16 +76,16 @@ ENTRYPOINT ["java","-jar","/app.jar"]
 EXPOSE 18081
 ```
 
-### aws credentials 설정되 (jenkins 플러그인 미리 설치 필요)
+#### aws credentials 설정되 (jenkins 플러그인 미리 설치 필요)
 jenkins 관리 > security > Manage Credentials  
 ![streamcollection](https://raw.githubusercontent.com/oknyang/oknyang.github.io/master/manage-credentials.png "manage credentials")  
 ![streamcollection](https://raw.githubusercontent.com/oknyang/oknyang.github.io/master/credentials-list.png "credentials-list")  
 ![streamcollection](https://raw.githubusercontent.com/oknyang/oknyang.github.io/master/credentials-detail.png "credentials-detail")  
 
 
-### jenkins job 생성 및 설정
+#### jenkins job 생성 및 설정
 jenkins > 새로운 Item > Pipeline 선택  
-![streamcollection](https://raw.githubusercontent.com/oknyang/oknyang.github.io/master/jenkins-create-job.png "create job")
+![streamcollection](https://raw.githubusercontent.com/oknyang/oknyang.github.io/master/jenkins-create-job.png "create job")  
 
-설정 > 파이프라인  
-![streamcollection](https://raw.githubusercontent.com/oknyang/oknyang.github.io/master/jenkins-pipeline-config.png "config")
+설정 > 파이프라인   
+![streamcollection](https://raw.githubusercontent.com/oknyang/oknyang.github.io/master/jenkins-pipeline-config.png "config") 
