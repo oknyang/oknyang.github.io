@@ -1,4 +1,3 @@
-
 ---
 title: jenkins로 Docker 이미지 build 및 ecr deliver
 date: 2022-07-22
