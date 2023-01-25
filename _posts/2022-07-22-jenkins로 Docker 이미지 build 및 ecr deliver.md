@@ -7,7 +7,7 @@ date: 2022-07-22
 ### jenkins가 설치된 서버에 Docker 설치
 ```
 yum -y update
-2yum -y install docker
+yum -y install docker
 ```
 
 ### docker 설치 후 docker daemon 실행
