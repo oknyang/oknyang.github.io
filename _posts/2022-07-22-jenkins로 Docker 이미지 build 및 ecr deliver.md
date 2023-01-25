@@ -1,8 +1,9 @@
 
 ---
-title: jenkins로 Docker 이미지 build
+title: jenkins로 Docker 이미지 build 및 ecr deliver
 date: 2022-07-22
 ---
+
 ## jenkins로 Docker 이미지 build
 ### jenkins가 설치된 서버에 Docker 설치
 ```
